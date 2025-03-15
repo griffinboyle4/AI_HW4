@@ -23,51 +23,50 @@ def question2a():
     """
       Prefer the close exit (+1), risking the cliff (-10).
     """
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    answerDiscount = 0.1  # Slightly reduced discount to prioritize short-term rewards
+    answerNoise = 0.0  # No noise to make the agent take direct paths
+    answerLivingReward = -0.2  # Increased penalty to encourage faster exits
     return answerDiscount, answerNoise, answerLivingReward
-    # If not possible, return 'NOT POSSIBLE'
+
 
 def question2b():
     """
       Prefer the close exit (+1), but avoiding the cliff (-10).
     """
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    answerDiscount = 0.3 # Increased discount to encourage more exploration
+    answerNoise = 0.3  # Increased noise to make the agent avoid risky paths
+    answerLivingReward = -0.2  # Slight penalty to encourage reaching the goal
     return answerDiscount, answerNoise, answerLivingReward
-    # If not possible, return 'NOT POSSIBLE'
+
 
 def question2c():
     """
       Prefer the distant exit (+10), risking the cliff (-10).
     """
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    answerDiscount = 0.9  # Encourages long-term rewards
+    answerNoise = 0.0  # No noise to take direct paths
+    answerLivingReward = 0.0  # Neutral reward per step
     return answerDiscount, answerNoise, answerLivingReward
-    # If not possible, return 'NOT POSSIBLE'
+
 
 def question2d():
     """
       Prefer the distant exit (+10), avoiding the cliff (-10).
     """
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    answerDiscount = 0.9
+    answerNoise = 0.2  # Some noise to encourage safer paths
+    answerLivingReward = -0.1  # Slight penalty to avoid unnecessary wandering
     return answerDiscount, answerNoise, answerLivingReward
-    # If not possible, return 'NOT POSSIBLE'
+
 
 def question2e():
     """
       Avoid both exits and the cliff (so an episode should never terminate).
     """
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
+    answerDiscount = 0.9
+    answerNoise = 0.2
+    answerLivingReward = 1.0  # Large living reward so the agent prefers not to exit
     return answerDiscount, answerNoise, answerLivingReward
-    # If not possible, return 'NOT POSSIBLE'
 
 if __name__ == '__main__':
     print('Answers to analysis questions:')
